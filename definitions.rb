@@ -1,26 +1,31 @@
-def even?(x)
-    (x % 2) == 0 
-end
-def more_then_five?(x)
-  x > 5 
-end 
-def less_then_three?(x)
-  x < 3 
-end 
-puts even?(2)
-puts even?(3)
-puts more_then_five?(3)
-puts more_then_five?(6)
-puts less_then_three?(2)
-puts less_then_three?(4)
-
 input = "srtieonrsat"
 $input_array = input.split("")
 
-attempt = "r"
+attempt = gets.split("")
 
-def check_input_accuracy (letter)
-    $input.include? "letter" 
+# checking the input to see if it matches the requirements
+def check_input (letter)
+  # does the input match the single digit length requirement?
+  if letter.length() -1 == 1
+      # is the input a letter or a number?
+      if letter[0][/[a-zA-Z]+/]  == letter[0] 
+          # is the input a match to the generated word? 
+          if $input_array.include? (letter[0])
+              # the input matches the generated word
+              return 0
+          else
+              # the input is valid but does not match the word
+              return 1
+          end
+      else
+          # the input meets the length requirement but is not a letter
+          return 2
+      end
+  else
+      # the input is not valid
+      return 3
+  end
 end
 
-check_input_accuracy (attempt)
+puts attempt
+puts check_input(attempt)
