@@ -67,3 +67,4 @@ while $tries != 0 do
         puts "You are wrong"
     end
 end
+puts "I like pie"
