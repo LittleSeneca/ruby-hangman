@@ -5,7 +5,7 @@ require 'random-word'
 word = RandomWord.adjs.next.split("")
 $word = word
 $word_upper = word.map { |string| string.upcase }
-$word_hashed = word.map { |string| string = "x" }
+$word_hashed = word.map { |string| string = "#" }
 $word_nil = []
 $wrong_letters = []
 for length in $word do
@@ -86,7 +86,6 @@ while $tries != 0 do
 end
 if $tries == 0 
   puts "You lost the game. Sorry"
-  puts "The word was #{word}"
   puts "goodbye"
 else
   puts "You had #{$tries} left in your attempt"
